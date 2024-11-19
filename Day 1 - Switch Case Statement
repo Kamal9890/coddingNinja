@@ -1,0 +1,27 @@
+#include <cmath>
+double areaSwitchCase(int ch, vector<double> a) {
+	// Write your code here
+     if(ch==1)
+	 {
+				double r = a[0];
+				double area = M_PI *r*r;
+				return area;
+				}
+
+	 else if(ch==2)
+	 {
+		 int l = a[0];
+		 int b = a[1];
+
+		 int area = l*b;
+
+		 return area;
+
+	 }
+
+	 else{
+		 cout<<"Invaled crenditial";
+	 }
+
+
+}

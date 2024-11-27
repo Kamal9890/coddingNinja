@@ -1,0 +1,36 @@
+vector<int> getFrequencies(vector<int>& v) {
+    
+    unordered_map<int,int> map;
+
+    for(int i =0; i <v.size(); i++)
+    {
+        map[v[i]]++;
+    }
+
+    int maxFreq = 0, minFreq = INT_MAX;
+    int maxele = INT_MAX, minele = INT_MAX;
+
+    
+    for (auto it : map) {
+        int count = it.second;
+        int element = it.first;
+
+    
+        if (count > maxFreq || (count == maxFreq && element < maxele)) {
+            maxele = element;
+            maxFreq = count;
+        }
+
+       
+        if (count < minFreq || (count == minFreq && element < minele)) {
+            minele = element;
+            minFreq = count;
+        }
+    }
+
+    return {maxele, minele};
+
+    
+
+   
+}

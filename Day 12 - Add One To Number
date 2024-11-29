@@ -1,0 +1,26 @@
+#include <bits/stdc++.h> 
+vector<int> addOneToNumber(vector<int> arr)
+{
+    int n = arr.size();
+    
+    // Start from the last digit and move left
+    for (int i = n - 1; i >= 0; --i) {
+        if (arr[i] < 9) {
+            arr[i]++;
+            // Remove any leading zeros if present
+            while (!arr.empty() && arr[0] == 0) {
+                arr.erase(arr.begin());
+            }
+            return arr;
+        }
+        arr[i] = 0; 
+
+         }
+
+    // If all digits were 9, we need to add a leading 1
+    arr.insert(arr.begin(), 1);
+    return arr;
+
+
+    
+}
